@@ -1,7 +1,8 @@
 <?php 
 //Credit : BossNz
 class twgiftcode{
-	public function redeem($phone,$voucher_hash){
+	public function redeem($phone,$voucher_hash_link){
+		$voucher_hash = substr($voucher_hash_link,39);
 		$curl = curl_init();
 		curl_setopt_array($curl, array(
 			CURLOPT_URL => 'https://gift.truemoney.com/campaign/vouchers/'.$voucher_hash.'/redeem',
